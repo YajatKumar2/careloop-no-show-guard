@@ -1,5 +1,26 @@
 USE noshowguard;
 
+
+-- Task 2.1 setup (run once, before load_data.sql)
+-- CREATE DATABASE noshowguard;
+-- USE noshowguard;
+-- CREATE TABLE clinics (
+--   clinic_id VARCHAR(5) PRIMARY KEY, clinic_name VARCHAR(40) NOT NULL, city VARCHAR(20) NOT NULL,
+--   tier VARCHAR(10), latitude DECIMAL(8,4), longitude DECIMAL(8,4), temp_c DECIMAL(5,1));
+-- CREATE TABLE appointments (
+--   appointment_id VARCHAR(8) PRIMARY KEY, patient_id VARCHAR(8) NOT NULL, clinic_id VARCHAR(5) NOT NULL,
+--   booked_on DATE, appt_date DATE, age INT, gender VARCHAR(1), distance_km DECIMAL(5,1), fee_inr INT,
+--   booking_channel VARCHAR(10), visit_type VARCHAR(12), reminder_sent VARCHAR(3), prior_no_shows INT,
+--   status VARCHAR(10), lead_days INT, no_show INT,
+--   FOREIGN KEY (clinic_id) REFERENCES clinics(clinic_id));
+
+-- Task 2.1 checks: 8 clinics, 990 appointments, 218 no-shows
+SELECT COUNT(*) FROM clinics;
+SELECT COUNT(*), SUM(no_show) FROM appointments;
+
+-- Task 2.1 duplicate insert (fails on purpose, error recorded below)
+-- INSERT INTO appointments VALUES
+-- ('A0001','P999','C01','2025-01-01','2025-01-05',30,'M',5.0,500,'App','Consultation','Yes',0,'Attended',4,0);
 -- Task 2.1 duplicate key test
 -- INSERT with appointment_id 'A0001' a second time gave:
 -- MySQL Error (1062): Duplicate entry 'A0001' for key 'appointments.PRIMARY'
