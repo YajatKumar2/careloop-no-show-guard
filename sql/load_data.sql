@@ -1,3 +1,4 @@
+USE noshowguard;
 INSERT INTO clinics VALUES ('C01','Kothrud Family Clinic','Pune','Metro',18.5074,73.8077,16.9);
 INSERT INTO clinics VALUES ('C02','Hadapsar Care Centre','Pune','Metro',18.5089,73.926,18.5);
 INSERT INTO clinics VALUES ('C03','Sitabuldi Health Point','Nagpur','Tier-2',21.1458,79.0882,19.3);
